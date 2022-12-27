@@ -1,9 +1,30 @@
 {
     "parser": "@typescript-eslint/parser",
-    "extends": ["plugin:@typescript-eslint/recommended"],
-    "parserOptions": { "ecmaVersion": 2018, "sourceType": "module" },
-    "ignorePatterns": ["src/__test__/**"],
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript" 
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "ignorePatterns": [
+        "src/__test__/**"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "import"
+    ],
     "rules": {
-        "@typescript-eslint/no-namespace": [2, {"allowDeclarations": true}]
+        "@typescript-eslint/no-namespace": [
+            2,
+            {
+                "allowDeclarations": true
+            }
+        ],
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
