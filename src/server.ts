@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import 'express-async-errors';
 import cookieSession from 'cookie-session';
 import { signupRouter } from './routes/signup';
-import { errorHandler } from './errors/error-handler';
+import { errorHandler } from '@hackathonskilldb/common-middlewares';
 import { currentUserRouter } from './routes/current-user';
 
 

@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hackathonskilldb/common-middlewares": "^1.0.1",
     "@prisma/client": "^4.7.1",
     "@types/cookie-session": "^2.0.44",
     "@types/jsonwebtoken": "^9.0.0",

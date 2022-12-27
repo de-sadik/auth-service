@@ -1,8 +1,7 @@
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { BadRequestError } from '../errors/bad-request-error';
 import { createNewUser, getUser } from '../handlers/user';
-import { validateRequest } from '../middlewares/validate_request';
+import { validateRequest, BadRequestError } from '@hackathonskilldb/common-middlewares';
 import jwt from 'jsonwebtoken';
 
 const router = express.Router();
