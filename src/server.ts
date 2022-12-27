@@ -5,6 +5,7 @@ import cookieSession from 'cookie-session';
 import { signupRouter } from './routes/signup';
 import { errorHandler } from '@hackathonskilldb/common-middlewares';
 import { currentUserRouter } from './routes/current-user';
+import { signinRouter } from './routes/signin';
 
 
 
@@ -23,6 +24,7 @@ app.use(
 
 app.use(signupRouter)
 app.use(currentUserRouter)
+app.use(signinRouter);
 
 
 app.get('/helathcheck', (req, res) => {
