@@ -12,7 +12,7 @@ router.post('/api/users/signin', validateRequest, async (req: Request, res: Resp
   const existingUser = await getUser(email);
 
   if (!existingUser) {
-    throw new BadRequestError('Email in use');
+    throw new BadRequestError('Invalid Credentials');
   }
 
   const passwordsMatch = await Password.compare(existingUser.password, password);
@@ -35,7 +35,7 @@ router.post('/api/users/signin', validateRequest, async (req: Request, res: Resp
     jwt: userJwt,
   };
 
-  res.status(200).send(existingUser);
+  res.status(200).send({"username":existingUser.username,"email":existingUser.email});
 });
 
 export { router as signinRouter };

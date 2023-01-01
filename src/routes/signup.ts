@@ -39,7 +39,7 @@ router.post(
       jwt: userJwt,
     };
 
-    res.status(201).send(user);
+    res.status(201).send({"username":user.username,"email":user.email});
   },
 );
 
