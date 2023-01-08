@@ -7,13 +7,23 @@ import { errorHandler } from '@hackathonskilldb/common-middlewares';
 import { currentUserRouter } from './routes/current-user';
 import { signinRouter } from './routes/signin';
 import { signoutRouter } from './routes/signout';
+import cors from 'cors'
 
 
 
 const app = express();
-
+const corsOptions = {
+  //To allow requests from client
+  origin: [
+    "http://localhost:3000",
+  ],
+  credentials: true,
+  // exposedHeaders: ["set-cookie"],
+}
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors(corsOptions))
+
 app.use(express.urlencoded({ extended: true }));
 app.set('trust proxy', true);
 app.use(
